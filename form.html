@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="shortcut icon"
+    href="./imagem/logo-natura-13.png"
+    type="logo Natura"
+  />
+    <title>Natura | Cadastro</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <header>
+      <a href="./">
+      <div class="logo-natura">
+        <img class="logo" src="./imagem/logo-natura-13.png" alt="logo-natura" />
+      </div></a>
+    </header>
+    <form class="form-check">
+      <section id="dados-usuario">
+        <div class="usuario-place">
+          <p>Dados do usuário</p>
+          <div class="cadastro">
+          <label for="nome">Nome:</label>
+          <input autocomplete="off" type="text" id="nome" placeholder="Nome completo do comprador."    title="Nome completo."  required/>
+
+
+          <label for="email">Email:</label>
+          <input autocomplete="off" type="email" id="email" placeholder="Preencha com seu email de contato."      title="Preencha um email válido." required/>
+
+          <label for="phone">WhatsApp:</label>
+          <input  autocomplete="off"  type="text"  id="phone" name="phone" placeholder="Ex.: (11) 11111-1111" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" 
+          title="Número de telefone precisa ser como no exemplo" required="required" />
+        </div>
+      
+        <div class="pagamento">
+          <p>Pagamento</p>
+        <div class="cadastro-pagamento">
+            <label for="nome-cartao">Usuário do cartão:</label>
+            <input autocomplete="off"   type="text" id="nome-cartao" placeholder="Preencha o nome como no cartão." title="Nome como escrito no cartão." required>
+            <label for="numero-cartao">Número do cartão:</label>
+            <input autocomplete="off"  type="text" id="numero-cartao" placeholder="1111 1111 1111 1111" title="Número na frente do cartão." pattern="([0-9]{4})\s([0-9]{4})\s([0-9]{4})\s([0-9]{4})" required>
+            <div class="dados-cartao">
+                <label for="cvv">CVV:</label>
+                <input autocomplete="off"  type="text" id="cvv" placeholder="111" title="Número no verso do cartão."  required>Val:
+                <label for="mounth">Mês:</label>
+                <select name="mounth" id="mounth" required>
+    <option value=""></option>
+    <option value="jan">Jan</option>
+    <option value="fev">Fev</option>
+    <option value="mar">Mar</option>
+    <option value="abr">Abr</option>
+    <option value="mai">Mai</option>
+    <option value="jun">Jun</option>
+    <option value="jul">Jul</option>
+    <option value="ago">Ago</option>
+    <option value="set">Set</option>
+    <option value="out">Out</option>
+    <option value="nov">Nov</option>
+    <option value="dez">Dez</option>
+                </select>
+                <label for="year">Ano:</label>
+                <select name="year" id="year" required> 
+        <option value=""></option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+        <option value="2027">2027</option>
+        <option value="2028">2028</option>
+        <option value="2029">2029</option>
+        <option value="2030">2030</option>
+                </select>
+            </div>      
+            </div>
+        </div>
+      </section>
+      <section id="dados-entrega">
+        <div class="entrega">
+        <p>Endereço de entrega</p>
+        <div class="cadastro-endereco">
+          <label for="nome-destinatario">Nome:</label>
+          <input autocomplete="off"      type="text" id="nome-destinatario" placeholder="Nome completo do destinatário." title="Nome do destinatário." required>
+        <label for="cep">CEP:</label>
+        <input autocomplete="off"    type="text" id="cep"  minlength="8" maxlength="8" title="Preencha com CEP válido." placeholder="Ex.: 11111111" required>
+        <label for="rua">Endereço:</label>
+        <input type="text" id="rua" title="Rua:" placeholder="Preencha com o endereço da entrega.">
+        <div class="dados-endereco">
+          <div class="numeros-entrega">
+        <label for="numero-endereco">Nº:</label>
+        <input autocomplete="off"    type="text" id="numero-endereco" title="nº do local da entrega:"   required></div>
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" title="Bairro">
+        </div>
+        <label for="complemento">Complemento:</label>
+        <input autocomplete="off"    type="text" id="complemento" placeholder="Complemente,caso necessário." title="Complemento">
+      
+        
+        <div class="dados-cidade">
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade"  title="Cidade destinatária." required>
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado"  title="Estado destinatário." required>
+        </div>
+                </div>
+        </div>
+        </section>
+
+        <section id="check-list"><div class="list"><p>Checagem de Pedidos</p></div>
+          <section id="last-check"></section>
+          
+          
+          
+          
+          <div class="finalizar">
+            <p id="preço-total">Total da compra: R$ 0,00</p>
+            <button type="submit" id="finalizar">Finalizar</button>
+          </div>
+        </section>
+    </form>
+    
+    
+    <script src="./form.js" type="module"></script></body>
+  </html>

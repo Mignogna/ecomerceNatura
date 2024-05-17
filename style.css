@@ -1,0 +1,590 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Montserrat:ital,wght@1,200&family=Raleway:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: rgb(235, 99, 9);
+  font-family: "Raleway", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+
+#carrinho {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30vw;
+  height: 100vh;
+  background-color: rgb(243, 200, 131);
+  border: 1.5px solid rgb(235, 99, 9);
+  transition: 0.5s;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 50;
+}
+#produtos-carrinho {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+  height: 90vh;
+  overflow-y: auto;
+}
+
+#carrinho.ocultar {
+  right: -30vw;
+}
+
+#carrinho.mostrar {
+  right: 0;
+}
+.numero {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+.upper-carrinho {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+#fechar-carrinho {
+  background-color: transparent;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+}
+
+#produtos-carrinho li {
+  width: 100%;
+  height: 16rem;
+  background-color: rgb(246, 230, 197);
+  display: flex;
+  padding: 0.3rem;
+  flex-direction: row;
+  border-radius: 5px;
+  border: 1.5px solid rgb(243, 200, 131);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  position: relative;
+}
+
+.img-cart {
+  height: 15rem;
+  width: 10rem;
+  border-radius: 4px;
+  border: 1px solid rgb(243, 200, 131);
+  margin-left: 10px;
+}
+
+.description-cart {
+  margin-left: 2rem;
+  line-height: 5rem;
+}
+
+.description-cart p {
+  font-size: 1.5rem;
+}
+
+.btn-fechar-produto-carrinho {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  border: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: transparent;
+}
+
+.quantidade {
+  display: flex;
+  align-items: end;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.4rem;
+  font-size: 1.8rem;
+  gap: 0.5rem;
+}
+
+.quantidade .incrementar,
+.quantidade .decrementar {
+  background: rgb(235, 99, 9);
+  color: rgb(243, 200, 131);
+  border: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+}
+
+header {
+  background-color: rgb(243, 200, 131);
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  border-bottom: 1.5px solid rgb(235, 99, 9);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+}
+#logo-natura {
+  width: 30%;
+}
+.logo {
+  margin: 1rem 0 1rem 2.5rem;
+  width: 8rem;
+  height: 5rem;
+}
+#icones {
+  width: 70%;
+}
+.icones {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 3rem;
+}
+
+.btn-header {
+  border: 1.5px solid rgb(235, 99, 9);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(251, 184, 0, 0.74),
+    rgba(235, 99, 9, 0.781)
+  );
+  display: flex;
+  justify-content: space-around;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  font-weight: 200;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-size: 2.5rem;
+  padding: 1rem 0 0.5rem 0;
+}
+
+.btn-header:hover {
+  border: none;
+  box-shadow: inset rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+body {
+  background-color: rgb(246, 230, 197);
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.caution {
+  position: absolute;
+  z-index: 1;
+  color: rgba(235, 99, 9, 0.781);
+  transform: rotate(-45deg);
+  font-size: 2rem;
+  bottom: 23rem;
+  left: 4rem;
+}
+
+#container-produto {
+  width: 100vw;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+  padding: 6.5px;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 580;
+  gap: 2rem;
+}
+.card {
+  border-radius: 1rem;
+  border: 1.5px solid rgb(243, 200, 131);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transform: 0.5s;
+  background-color: rgb(246, 230, 197);
+  width: 32rem;
+  height: 40rem;
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 15;
+}
+.img-card {
+  padding: 1rem;
+  width: 80%;
+  height: 70%;
+}
+
+#container-produto button {
+  background-color: rgb(235, 99, 9);
+  color: rgb(246, 230, 197);
+  border: none;
+  outline: none;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  font-weight: 350;
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  font-family: "Raleway", sans-serif;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#container-produto button:hover {
+  box-shadow: inset rgba(0, 0, 0, 0.3) 2px 2px 2.6px;
+}
+
+.bi-cart-plus {
+  margin-left: 0.8rem;
+}
+
+::-webkit-scrollbar {
+  background-color: rgb(243, 200, 131);
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(235, 99, 9);
+  border-radius: 1rem;
+}
+
+#preço-total {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+#comprar {
+  padding: 0.7rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: rgb(235, 99, 9);
+  color: rgb(246, 230, 197);
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+}
+
+#comprar:hover {
+  box-shadow: inset rgba(0, 0, 0, 0.3) 2px 2px 2.6px;
+}
+
+#filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 0.8rem;
+  gap: 1rem;
+  color: rgb(235, 99, 9);
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+#exibir-todos,
+#exibir-masculinos,
+#exibir-femininos {
+  visibility: hidden;
+}
+
+.seleção {
+  cursor: pointer;
+  user-select: none;
+}
+
+.seleção:hover {
+  text-decoration-line: underline;
+}
+.card.hide {
+  display: none;
+}
+
+@media all and (max-width: 1030px) {
+  header {
+    width: 100%;
+    display: flex;
+  }
+  #logo-natura {
+    width: 200px;
+  }
+
+  #icones {
+    width: 70%;
+  }
+  .icones {
+    margin-right: 2rem;
+  }
+
+  #carrinho {
+    width: 30%;
+    height: 100%;
+  }
+  #carrinho.mostrar {
+    right: 0;
+  }
+  #carrinho.ocultar {
+    right: -30%;
+  }
+  .numero {
+    font-size: 1.5rem;
+  }
+  #container-produto {
+    width: 100%;
+    display: grid;
+    margin-left: 0.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: wrap;
+    padding: 3px;
+    gap: 0.5rem;
+  }
+
+  .card {
+    width: 23rem;
+    height: 35rem;
+    font-size: 1.2rem;
+  }
+  #filter {
+    display: flex;
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 768px) {
+  #carrinho {
+    height: 100%;
+    width: 35%;
+    padding: 0.4rem;
+  }
+  #carrinho.mostrar {
+    right: 0;
+  }
+
+  #carrinho.ocultar {
+    right: -35%;
+  }
+  #produtos-carrinho li {
+    height: 10rem;
+  }
+  .img-cart {
+    height: 9rem;
+    width: 7rem;
+  }
+  .description-cart {
+    line-height: 3rem;
+    margin-left: 0.8rem;
+  }
+  .numero,
+  .description-cart p {
+    font-size: 1.3rem;
+  }
+  #preço-total {
+    font-size: 1.8rem;
+  }
+  #carrinho h1 {
+    font-size: 2.2rem;
+  }
+
+  #container-produto button {
+    font-size: 1.2rem;
+    padding: 0.4rem;
+    margin-top: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .bi-x-circle-fill {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  #fechar-carrinho {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  header {
+    width: 830px;
+    display: flex;
+    height: 6rem;
+  }
+  #logo-natura {
+    width: 180px;
+  }
+  #icones {
+    width: 70%;
+  }
+  .icones {
+    margin-right: 5rem;
+  }
+  #filter {
+    text-align: center;
+  }
+  #container-produto {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .card {
+    width: 19rem;
+    height: 25rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    gap: 0.2rem;
+  }
+  .img-card {
+    padding: 1rem 0 0 0;
+  }
+}
+
+@media all and (max-width: 430px) {
+  header {
+    width: 830px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #logo-natura {
+    width: 30dvw;
+  }
+  #icones {
+    width: 70dvw;
+  }
+  .icones {
+    width: 100%;
+    margin-left: -5rem;
+  }
+  #filter {
+    text-align: center;
+    width: 830px;
+  }
+  #container-produto {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+  .card {
+    width: 24.6rem;
+    height: 29rem;
+  }
+  .card p {
+    font-size: 1.5rem;
+  }
+  #carrinho {
+    height: 100%;
+    width: 40%;
+    padding: 0.4rem;
+  }
+  #carrinho.mostrar {
+    right: 0;
+  }
+
+  #carrinho.ocultar {
+    right: -40%;
+  }
+}
+@media all and (max-width: 360px) {
+  header {
+    width: 820px;
+    height: 6rem;
+  }
+  .logo {
+    width: 5rem;
+    height: 4rem;
+  }
+
+  .btn-header {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .icones {
+    gap: 2rem;
+    margin-right: 3rem;
+  }
+
+  #container-produto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-left: 3rem;
+  }
+
+  #filter {
+    font-size: 2.5rem;
+  }
+  .card {
+    width: 35rem;
+    height: 39rem;
+    margin-left: auto;
+    margin-right: auto;
+    transform: none;
+  }
+  .card p {
+    font-size: 1.5rem;
+  }
+  #carrinho {
+    width: 50%;
+  }
+  #carrinho.ocultar {
+    right: -50%;
+  }
+
+  #produtos-carrinho li {
+    height: 17rem;
+  }
+  .description-cart {
+    line-height: 2rem;
+    margin-left: 0.8rem;
+  }
+  #preço-total {
+    font-size: 2.5rem;
+  }
+  #carrinho h1 {
+    font-size: 3.5rem;
+  }
+
+  .numero {
+    font-size: 1.8rem;
+  }
+  .description-cart p {
+    font-size: 2rem;
+  }
+  .img-cart {
+    height: 16rem;
+    width: 10rem;
+  }
+  .numero {
+    font-size: 1.5rem;
+  }
+}

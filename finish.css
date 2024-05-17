@@ -1,0 +1,196 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+header {
+  background-color: rgb(243, 200, 131);
+  min-width: 100vw;
+  height: 7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid rgb(235, 99, 9);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+}
+.logo {
+  margin: 1rem 0 1rem 2.5rem;
+
+  width: 8rem;
+  height: 5rem;
+}
+
+body {
+  background-color: rgb(246, 230, 197);
+  width: 100%;
+  height: 90%;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+.finish {
+  width: 90%;
+  height: 51rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: rgba(235, 99, 9, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1.5px solid rgb(243, 200, 131);
+  margin-top: 10rem;
+}
+
+.finish img {
+  width: 98%;
+  height: 49rem;
+  border-radius: 1rem;
+  position: absolute;
+  border: 1.5px solid rgb(243, 200, 131);
+}
+
+.agradecimento {
+  z-index: 1;
+  width: 70rem;
+  font-size: 2.5rem;
+  color: rgb(235, 99, 9);
+  left: 5rem;
+  top: 6rem;
+  position: absolute;
+}
+.agradecimento p {
+  margin-top: 2rem;
+}
+
+.agradecimento p:last-child {
+  font-size: 2rem;
+  font-style: italic;
+  margin-top: 5.5rem;
+}
+
+#data {
+  z-index: 2;
+  color: rgb(217, 55, 9);
+  font-size: 3rem;
+  position: absolute;
+  left: 26rem;
+  bottom: 10rem;
+}
+
+.assinatura {
+  color: rgb(217, 55, 9);
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 10rem;
+}
+@media all and (max-width: 1030px) {
+  .agradecimento {
+    z-index: 1;
+    width: 60rem;
+    font-size: 2rem;
+    left: 4rem;
+    top: 5rem;
+  }
+
+  .agradecimento p:last-child {
+    font-size: 1.7rem;
+    font-style: italic;
+    margin-top: 4.5rem;
+  }
+  #data {
+    font-size: 2.5rem;
+    left: 23rem;
+    bottom: 17rem;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .agradecimento {
+    z-index: 999;
+    width: 40rem;
+    font-size: 1.7rem;
+    left: 3rem;
+    top: 5rem;
+  }
+
+  .agradecimento p:last-child {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin-top: 4.5rem;
+  }
+  #data {
+    font-size: 2.2rem;
+    left: 19rem;
+  }
+}
+
+@media all and (max-width: 430px) {
+  header {
+    width: 480px;
+  }
+  .finish {
+    visibility: hidden;
+  }
+  .agradecimento {
+    margin-top: 6rem;
+  }
+  .agradecimento,
+  #data {
+    visibility: visible;
+  }
+
+  .finish p:first-child {
+    font-size: 3.5rem;
+  }
+  #data {
+    bottom: 5.5rem;
+    font-size: 2.2rem;
+  }
+
+  .finish img {
+    visibility: hidden;
+  }
+  .assinatura {
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .finish img {
+    visibility: hidden;
+  }
+  .finish p:first-child {
+    font-size: 3rem;
+  }
+  .agradecimento {
+    width: 400px;
+    font-size: 2.2rem;
+    left: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  #data {
+    font-size: 2.2rem;
+    right: 4.5rem;
+    bottom: 4.5rem;
+    text-align: justify;
+  }
+}
