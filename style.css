@@ -131,7 +131,6 @@ h1 {
 
 header {
   background-color: rgb(243, 200, 131);
-  width: 100%;
   height: 7rem;
   display: flex;
   flex-direction: row;
@@ -178,6 +177,7 @@ header {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   font-size: 2.5rem;
   padding: 1rem 0 0.5rem 0;
+  margin-right: 0;
 }
 
 .btn-header:hover {
@@ -204,18 +204,18 @@ body {
 }
 
 #container-produto {
-  width: 100vw;
-  margin-top: 2rem;
+  width: 90%;
+  margin-top: 6rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   padding: 6.5px;
-  justify-content: space-between;
   font-size: 1.6rem;
   text-align: center;
   font-family: "Raleway", sans-serif;
   font-weight: 580;
-  gap: 2rem;
+  gap: 5rem;
+  margin-left: 8rem;
 }
 .card {
   border-radius: 1rem;
@@ -263,7 +263,7 @@ body {
 
 ::-webkit-scrollbar {
   background-color: rgb(243, 200, 131);
-  width: 0.5rem;
+  width: 0.7rem;
   height: 0.5rem;
 }
 
@@ -303,7 +303,7 @@ body {
   padding-top: 0.8rem;
   gap: 1rem;
   color: rgb(235, 99, 9);
-  font-size: 2rem;
+  font-size: 3.3rem;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
 }
@@ -327,24 +327,15 @@ body {
 }
 
 @media all and (max-width: 1030px) {
-  header {
-    width: 100%;
-    display: flex;
-  }
-  #logo-natura {
-    width: 200px;
-  }
-
-  #icones {
-    width: 70%;
-  }
-  .icones {
-    margin-right: 2rem;
-  }
-
   #carrinho {
     width: 30%;
     height: 100%;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  #preço-total {
+    font-size: 1.8rem;
   }
   #carrinho.mostrar {
     right: 0;
@@ -356,23 +347,21 @@ body {
     font-size: 1.5rem;
   }
   #container-produto {
-    width: 100%;
-    display: grid;
-    margin-left: 0.5rem;
-    grid-template-columns: repeat(4, 1fr);
-    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 4rem;
+    grid-template-columns: repeat(3, 1fr);
     padding: 3px;
-    gap: 0.5rem;
   }
 
   .card {
-    width: 23rem;
-    height: 35rem;
+    width: 28rem;
+    height: 38rem;
     font-size: 1.2rem;
   }
   #filter {
     display: flex;
     text-align: center;
+    font-size: 2rem;
   }
 }
 
@@ -404,9 +393,7 @@ body {
   .description-cart p {
     font-size: 1.3rem;
   }
-  #preço-total {
-    font-size: 1.8rem;
-  }
+
   #carrinho h1 {
     font-size: 2.2rem;
   }
@@ -428,7 +415,6 @@ body {
     box-shadow: none;
   }
   header {
-    width: 830px;
     display: flex;
     height: 6rem;
   }
@@ -445,10 +431,7 @@ body {
     text-align: center;
   }
   #container-produto {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .card {
@@ -484,9 +467,8 @@ body {
     width: 830px;
   }
   #container-produto {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    flex-wrap: wrap;
+
     gap: 0.7rem;
   }
   .card {
@@ -533,9 +515,8 @@ body {
   }
 
   #container-produto {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    flex-wrap: wrap;
+
     gap: 1rem;
     margin-left: 3rem;
   }
